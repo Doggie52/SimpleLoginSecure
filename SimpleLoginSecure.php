@@ -174,7 +174,7 @@ class SimpleLoginSecure
 			//Destroy old session
 			$this->CI->session->sess_destroy();
 
-			$this->CI->db->simple_query('UPDATE ' . $this->user_table  . ' SET user_last_login = NOW() WHERE user_id = ' . $user_data['user_id']);
+			$this->CI->db->simple_query('UPDATE ' . $this->user_table  . ' SET user_last_login = "' . date('c') . '" WHERE user_id = ' . $user_data['user_id']);
 
 			//Set session data
 			unset($user_data['user_pass']);
